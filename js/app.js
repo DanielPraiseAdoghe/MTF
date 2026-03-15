@@ -74,3 +74,46 @@ card.style.display = name.includes(value) ? "block":"none";
 });
 
 }
+/* SCROLL REVEAL */
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+const windowHeight = window.innerHeight;
+
+reveals.forEach(el => {
+
+const elementTop = el.getBoundingClientRect().top;
+
+if(elementTop < windowHeight - 100){
+
+el.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+
+
+const buttons = document.querySelectorAll("button, .btn-primary");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", function(e){
+
+const circle = document.createElement("span");
+
+circle.classList.add("ripple");
+
+this.appendChild(circle);
+
+setTimeout(()=>circle.remove(),600);
+
+});
+
+});

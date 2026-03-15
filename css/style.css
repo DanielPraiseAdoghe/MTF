@@ -653,3 +653,199 @@ gap:20px;
 }
 
 }
+
+
+/* PAGE FADE IN */
+
+body{
+animation:fadePage 0.8s ease;
+}
+
+@keyframes fadePage{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+
+/* HERO TEXT ANIMATION */
+
+.hero h1{
+animation:slideUp 1s ease;
+}
+
+.hero p{
+animation:slideUp 1.2s ease;
+}
+
+.hero-buttons{
+animation:slideUp 1.4s ease;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+
+/* CARD HOVER ANIMATION */
+
+.card{
+transition:all 0.35s ease;
+}
+
+.card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+
+
+/* FEATURE CARDS */
+
+.feature-card{
+transition:all 0.3s ease;
+}
+
+.feature-card:hover{
+
+transform:translateY(-8px) scale(1.03);
+
+}
+
+
+
+/* BUTTON ANIMATION */
+
+.btn-primary,
+.btn-secondary,
+.contact-form button{
+
+transition:all .25s ease;
+
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+
+/* PROFILE IMAGE FLOAT */
+
+.profile-img{
+
+animation:floatImg 4s ease-in-out infinite;
+
+}
+
+@keyframes floatImg{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+
+
+/* NAVBAR SLIDE */
+
+.header{
+
+animation:navSlide .6s ease;
+
+}
+
+@keyframes navSlide{
+
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+
+/* SCROLL REVEAL */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.ripple{
+
+position:absolute;
+background:rgba(255,255,255,0.5);
+border-radius:50%;
+width:20px;
+height:20px;
+animation:ripple .6s linear;
+
+}
+
+@keyframes ripple{
+
+from{
+transform:scale(1);
+opacity:1;
+}
+
+to{
+transform:scale(15);
+opacity:0;
+}
+
+}
+
+
+html{
+scroll-behavior:smooth;
+}
