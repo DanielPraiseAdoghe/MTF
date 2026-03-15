@@ -1,638 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tech Friend - Nigerian Flag Theme</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        :root {
-            --nigeria-green: #008751;
-            --nigeria-white: #ffffff;
-            --dark-green: #006b41;
-            --light-green: #00a86b;
-            --accent-gold: #ffd700;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 50%, var(--nigeria-green) 100%);
-            color: var(--nigeria-white);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+<title>My Tech Friend</title>
 
-        /* Header with Nigerian Flag Stripes */
-        header {
-            background: linear-gradient(to bottom, 
-                var(--nigeria-green) 0%, 
-                var(--nigeria-green) 33%, 
-                var(--nigeria-white) 33%, 
-                var(--nigeria-white) 66%, 
-                var(--nigeria-green) 66%, 
-                var(--nigeria-green) 100%);
-            padding: 2rem 1rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
+<link rel="stylesheet" href="css/style.css">
 
-        header h1 {
-            color: var(--nigeria-green);
-            background: var(--nigeria-white);
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            color: var(--nigeria-green);
-            background: rgba(255,255,255,0.95);
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(0,0,0,0.2);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: var(--nigeria-white);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--nigeria-white);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background: var(--nigeria-white);
-            color: var(--nigeria-green);
-            transform: translateY(-2px);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 3rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--nigeria-green), var(--nigeria-white), var(--nigeria-green));
-            border-radius: 2px;
-        }
-
-        /* Flag Icons */
-        .flag {
-            width: 40px;
-            height: 30px;
-            display: inline-block;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            vertical-align: middle;
-            margin: 0 5px;
-        }
-
-        .flag-nigeria {
-            background: linear-gradient(to right, var(--nigeria-green) 33%, var(--nigeria-white) 33%, var(--nigeria-white) 66%, var(--nigeria-green) 66%);
-        }
-
-        .flag-uk {
-            background: #012169;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .flag-uk::before {
-            content: '🇬🇧';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-        }
-
-        .flag-us {
-            background: #b22234;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .flag-us::before {
-            content: '🇺🇸';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-        }
-
-        /* Children Grid */
-        .children-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .child-card {
-            background: var(--nigeria-white);
-            color: var(--nigeria-green);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .child-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .child-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-bottom: 5px solid var(--nigeria-green);
-        }
-
-        .child-info {
-            padding: 1.5rem;
-        }
-
-        .child-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .child-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--dark-green);
-        }
-
-        .child-country {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .child-details {
-            margin-top: 1rem;
-        }
-
-        .child-details p {
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-            background: rgba(0,135,81,0.1);
-            border-radius: 8px;
-            border-left: 4px solid var(--nigeria-green);
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: var(--nigeria-green);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin: 0.2rem;
-        }
-
-        /* Country Filter Buttons */
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 2px solid var(--nigeria-white);
-            color: var(--nigeria-white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--nigeria-white);
-            color: var(--nigeria-green);
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 5px solid var(--nigeria-white);
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--nigeria-white);
-            padding: 2rem;
-            border-radius: 20px;
-            color: var(--nigeria-green);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--nigeria-green);
-            border-radius: 10px;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--light-green);
-            box-shadow: 0 0 0 3px rgba(0,135,81,0.1);
-        }
-
-        .submit-btn {
-            background: var(--nigeria-green);
-            color: white;
-            border: none;
-            padding: 1rem 3rem;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: var(--dark-green);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,0.3);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 3px solid var(--nigeria-white);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: var(--nigeria-white);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px);
-            color: var(--accent-gold);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-                padding: 0.8rem 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .children-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .child-image {
-                height: 250px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a {
-                width: 200px;
-                text-align: center;
-            }
-
-            section {
-                padding: 1.5rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 1.5rem 0.5rem;
-            }
-
-            header h1 {
-                font-size: 1.2rem;
-                padding: 0.6rem 1.2rem;
-            }
-
-            .container {
-                padding: 1rem 0.5rem;
-            }
-
-            .child-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .filter-btn {
-                width: 200px;
-                justify-content: center;
-            }
-        }
-
-        /* Loading Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .child-card {
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        .child-card:nth-child(1) { animation-delay: 0.1s; }
-        .child-card:nth-child(2) { animation-delay: 0.2s; }
-        .child-card:nth-child(3) { animation-delay: 0.3s; }
-        .child-card:nth-child(4) { animation-delay: 0.4s; }
-        .child-card:nth-child(5) { animation-delay: 0.5s; }
-        .child-card:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark-green);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--nigeria-white);
-            border-radius: 6px;
-            border: 3px solid var(--dark-green);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-gold);
-        }
-    </style>
 </head>
+
 <body>
-    <header>
-        <h1>My Tech Friend</h1>
-        <p>Connecting Young Tech Talents Globally</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#children">Our Kids</a></li>
-            <li><a href="#countries">Countries</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header class="header">
 
-    <div class="container">
-        <!-- Home Section -->
-        <section id="home">
-            <h2>Welcome to My Tech Friend</h2>
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                Empowering the next generation of tech innovators from Nigeria, the UK, and the US. 
-                <span class="flag flag-nigeria"></span>
-            </p>
-        </section>
+<div class="logo">My Tech Friend</div>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>My Tech Friend is a global initiative dedicated to nurturing young tech talents. We connect children from diverse backgrounds and provide them with the tools, mentorship, and resources they need to excel in technology.</p>
-                    <br>
-                    <p>Our program focuses on:</p>
-                    <br>
-                    <ul style="margin-left: 2rem;">
-                        <li>Coding and Programming</li>
-                        <li>Robotics and AI</li>
-                        <li>Digital Creativity</li>
-                        <li>Problem Solving</li>
-                    </ul>
-                </div>
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop" alt="Kids learning tech" class="about-image">
-            </div>
-        </section>
+<nav id="nav">
 
-        <!-- Children Section -->
-        <section id="children">
-            <h2>Our Young Tech Stars</h2>
-            
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterChildren('all')">
-                    <span class="flag flag-nigeria"></span> All Countries
-                </button>
-                <button class="filter-btn" onclick="filterChildren('nigeria')">
-                    <span class="flag flag-nigeria"></span> Nigeria
-                </button>
-                <button class="filter-btn" onclick="filterChildren('uk')">
-                    <span class="flag flag-uk"></span> UK
-                </button>
-                <button class="filter-btn" onclick="filterChildren('us')">
-                    <span class="flag flag-us"></span> US
-                </button>
-            </div>
+<a href="index.html">Home</a>
+<a href="kids.html">Tech Kids</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 
-            <div class="children-grid" id="childrenGrid">
-                <!-- Nigeria -->
-                <div class="child-card" data-country="nigeria">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=300&fit=crop" alt="Child from Nigeria" class="child-image">
-                    <div class="child-info">
-                        <div class="child-header">
-                            <h3 class="child-name">Amara Okafor</h3>
-                            <div class="child-country">
-                                <span class="flag flag-nigeria"></span> Nigeria
-                            </div>
-                        </div>
-                        <div class="child-details">
-                            <p><strong>Age:</strong> 12 years old</p>
-                            <p><strong>Interest:</strong> Web Development & Robotics</p>
-                            <p><strong>Skills:</strong> 
-                                <span class="skill-tag">HTML/CSS</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Arduino</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+</nav>
 
-                <div class="child-card" data-country="nigeria">
-                    <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=400&h=300&fit=crop" alt="Child from Nigeria" class="child-image">
-                    <div class="child-info">
-                        <div class="child-header">
-                            <h3 class="child-name">Chidi Nwosu</h3>
-                            <div class="child-country">
-                                <span class="flag flag-nigeria"></span> Nigeria
-                            </div>
-                        </div>
-                        <div class="child-details">
-                            <p><strong>Age:</strong> 10 years old</p>
-                            <p><strong>Interest:</strong> Game Development</p>
-                            <p><strong>Skills:</strong> 
-                                <span class="skill-tag">Scratch</span>
-                                <span class="skill-tag">Unity</span>
-                                <span class="skill-tag">C#</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+<div class="menu-btn" id="menuBtn">☰</div>
 
-                <!-- UK -->
-                <div class="child-card" data-country="uk">
-                    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=300&fit=crop" alt="Child from UK" class="child-image">
-                    <div class="child-info">
-                        <div class="child-header">
-                            <h3 class="child-name">Emma Thompson</h3>
-                            <div class="child-country">
-                                <span class="flag flag-uk"></span> United Kingdom
-                            </div>
-                        </div>
-                        <div class="child-details">
-                            <p><strong>Age:</strong> 11 years old</p>
-                            <p><strong>Interest:</strong> AI & Machine Learning</p>
-                            <p><strong>Skills:</strong> 
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">TensorFlow</span>
-                                <span class="skill-tag">Data Science</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+</header>
 
-                <div class="child-card" data-country="uk">
-                    <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=400&h=300&fit=crop" alt="Child from UK" class="child-image">
-                    <div class="child-info">
-                        <div class="child-header"></div>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Connecting The Next Generation
+<br>
+<span>Of Tech Innovators</span>
+</h1>
+
+<p>
+A global community where kids learn coding, robotics,
+AI and digital creativity together.
+</p>
+
+<div class="hero-buttons">
+
+<a href="kids.html" class="btn-primary">Explore Tech Kids</a>
+<a href="about.html" class="btn-secondary">Learn More</a>
+
+</div>
+
+<div class="hero-flags">
+
+<span>🇳🇬 Nigeria</span>
+<span>🇬🇧 United Kingdom</span>
+<span>🇺🇸 United States</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="stats">
+
+<div class="stat">
+
+<h2 id="kidsCount">0</h2>
+<p>Young Innovators</p>
+
+</div>
+
+<div class="stat">
+
+<h2>3</h2>
+<p>Countries</p>
+
+</div>
+
+<div class="stat">
+
+<h2>20+</h2>
+<p>Tech Skills</p>
+
+</div>
+
+</section>
+
+
+
+<section class="features">
+
+<div class="feature-card">
+
+<div class="icon">💻</div>
+
+<h3>Learn Coding</h3>
+
+<p>
+Kids build websites, apps and games using
+modern programming languages.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="icon">🤖</div>
+
+<h3>Robotics & AI</h3>
+
+<p>
+Explore artificial intelligence and robotics
+through hands-on projects.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="icon">🌍</div>
+
+<h3>Global Community</h3>
+
+<p>
+Connect with young innovators across
+different countries.
+</p>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 My Tech Friend</p>
+
+</footer>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
