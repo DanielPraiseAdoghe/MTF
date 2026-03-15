@@ -6,7 +6,7 @@ kids.forEach(kid=>{
 
 grid.innerHTML += `
 
-<div class="card">
+<a href="profile.html?id=${kid.id}" class="card">
 
 <img src="${kid.img}">
 
@@ -14,9 +14,9 @@ grid.innerHTML += `
 
 <h3>${kid.name}</h3>
 
-<p class="country">${kid.country}</p>
+<p>${kid.flag} ${kid.country}</p>
 
-<p class="bio">${kid.bio}</p>
+<p>Age: ${kid.age}</p>
 
 <div class="skills">
 
@@ -24,18 +24,11 @@ ${kid.skills.map(skill=>`<span>${skill}</span>`).join("")}
 
 </div>
 
-<div class="stats">
-
-<span>📁 ${kid.projects} Projects</span>
-<span>⭐ ${kid.rating}</span>
-
 </div>
 
-</div>
+</a>
 
-</div>
-
-`;
+`
 
 });
 
